@@ -1,0 +1,14 @@
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/deekshati/wordbee.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+branch.master.vscode-merge-base=origin/master
+branch.feat/ui.vscode-merge-base=origin/master
+branch.feat/ui.remote=origin
+branch.feat/ui.merge=refs/heads/feat/ui
