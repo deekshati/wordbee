@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 const App = () => {
   const [currentRow, setCurrentRow] = useState(0);
   const [gameBoard, setGameBoard] = useState(Array(6).fill(null).map(() => Array(5).fill("")));
-  const [gameStatus, setGameStatus] = useState("playing"); // playing, won, lost
+  const [gameStatus, setGameStatus] = useState("playing");
   const [targetWord, setTargetWord] = useState("");
   const [feedback, setFeedback] = useState(Array(6).fill(null).map(() => Array(7).fill(null)));
   const [showInstructions, setShowInstructions] = useState(false);
@@ -183,7 +183,7 @@ const App = () => {
         overflow: 'hidden'
       },
       title: {
-        fontSize: isMobile ? '20px' : isTablet ? '24px' : '32px',
+        fontSize: '32px',
         textAlign: 'center',
         flexDirection: isMobile ? 'column' : 'row',
         gap: isMobile ? '5px' : '10px'
