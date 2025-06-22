@@ -394,10 +394,10 @@ const App = () => {
         <p>Made with extreme hardwork and patience by{' '}
           <a href="https://github.com/deekshati" target="_blank" style={{ fontSize: windowWidth <= 768 ? '14px' : '18px' }}>
             DeekshaTiwari
-          </a>{windowWidth <= 768 ? '' : ' & '}
-          {windowWidth <= 768 && <br />}
-          <a target="_blank" href="https://github.com/MrChepe09" style={{ fontSize: windowWidth <= 768 ? '14px' : '18px' }}>
-            MrChepe09
+          {/* </a>{windowWidth <= 768 ? '' : ' & '} */}
+          {/* {windowWidth <= 768 && <br />} */}
+          {/* <a target="_blank" href="https://github.com/MrChepe09" style={{ fontSize: windowWidth <= 768 ? '14px' : '18px' }}>
+            MrChepe09 */}
           </a>
         </p>
       </div>
