@@ -1,20 +1,16 @@
 import React, { useRef, useState, useEffect } from "react";
+import { wordList as words } from "./wordList";
 
 const App = () => {
+  // Game state
   const [currentRow, setCurrentRow] = useState(0);
   const [gameBoard, setGameBoard] = useState(Array(6).fill(null).map(() => Array(5).fill("")));
-  const [gameStatus, setGameStatus] = useState("playing");
+  const [gameStatus, setGameStatus] = useState("playing"); // playing, won, lost
   const [targetWord, setTargetWord] = useState("");
   const [feedback, setFeedback] = useState(Array(6).fill(null).map(() => Array(7).fill(null)));
   const [showInstructions, setShowInstructions] = useState(false);
 
-  const wordList = [
-    "CRANE", "SLATE", "AUDIO", "ROAST", "TIGER", "PLANE", "HOUSE", "DREAM", 
-    "LIGHT", "BEACH", "PARTY", "MONEY", "PLANT", "WORLD", "PHONE", "APPLE",
-    "WATER", "CHAIR", "TABLE", "SMILE", "CLOUD", "HEART", "MAGIC", "OCEAN",
-    "ROYAL", "BRAVE", "CLEAN", "DANCE", "FIELD", "GLASS", "HAPPY", "JUICE",
-    "KNIFE", "LAUGH", "MOUSE", "NOISE", "QUIET", "RADIO", "STORM", "TRUST"
-  ];
+  const wordList = words
 
   const inputRefs = useRef(Array(6).fill(null).map(() => 
     Array(5).fill(null).map(() => React.createRef())
@@ -71,6 +67,11 @@ const App = () => {
     
     if (currentGuess.length !== 5) {
       alert("Please enter a 5-letter word!");
+      return;
+    }
+
+    if (new Set(currentGuess).size !== currentGuess.length) {
+      alert("No repeating letters allowed in guesses!");
       return;
     }
 
@@ -183,7 +184,7 @@ const App = () => {
         overflow: 'hidden'
       },
       title: {
-        fontSize: '32px',
+        fontSize: isMobile ? '32px' : isTablet ? '24px' : '32px',
         textAlign: 'center',
         flexDirection: isMobile ? 'column' : 'row',
         gap: isMobile ? '5px' : '10px'
